@@ -22,7 +22,7 @@ jobs:
       - name: Instalar dependencias del backend
         run: |
           cd Backend
-          npm install
+          npm install --include=dev
 
       - name: Ejecutar pruebas del backend
         run: |
