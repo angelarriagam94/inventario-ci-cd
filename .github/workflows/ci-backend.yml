@@ -19,12 +19,17 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - name: Instalar dependencias del backend
+      - name: Instalar dependencias del backend (incluye devDependencies)
         run: |
           cd Backend
-          npm install --include=dev
+          npm ci --include=dev
 
-      - name: Ejecutar pruebas del backend
+      - name: Verificar binarios instalados
         run: |
           cd Backend
-          npm test
+          ls -la node_modules/.bin || true
+
+      - name: Ejecutar pruebas del backend con npx
+        run: |
+          cd Backend
+          npx jest --runInBand
