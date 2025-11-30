@@ -21,10 +21,11 @@ jobs:
 
       - name: Instalar dependencias del frontend
         run: |
-          cd frontend
+          cd Frontend
           npm install
 
       - name: Ejecutar pruebas del frontend
         run: |
-          cd frontend
+          cd Frontend
           npm test -- --run
+
