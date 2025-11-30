@@ -22,13 +22,13 @@ jobs:
 
       - name: Build del backend (simulado)
         run: |
-          cd backend
+          cd Backend
           npm install
           echo "Compilación backend simulada."
 
       - name: Build del frontend (simulado)
         run: |
-          cd frontend
+          cd Frontend
           npm install
           npm run build
           echo "Frontend build completado (simulado)."
@@ -36,8 +36,8 @@ jobs:
       - name: Crear artefacto final
         run: |
           mkdir deploy
-          cp -r backend deploy/backend
-          cp -r frontend/dist deploy/frontend
+          cp -r Backend deploy/backend
+          cp -r Frontend/dist deploy/frontend
           echo "Artefacto preparado."
 
       - name: Simulación de despliegue
